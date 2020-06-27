@@ -21,10 +21,18 @@ const stageEl = document.getElementById('stage')
 const messageEl = document.querySelector('h2')
 const lettersBtns = document.querySelectorAll('#letters button')
 const replayBtn = document.getElementById('replay')
+const getLetters = document.getElementById('letters')
 
 /*----- event listeners -----*/
-document.getElementById('letters').addEventListener('click', handleLetterClick)
+// let getLetters = document.getElementById('letters')
+// if(getLetters) {
+//     addEventListener('click', handleLetterClick)
+// }
+getLetters.addEventListener('click', handleLetterClick)
 
+// if(replayBtn) {
+//     addEventListener('click', init)
+// }
 replayBtn.addEventListener('click', init)
 
 /*----- functions -----*/
@@ -103,3 +111,5 @@ function renderMessage() {
 function isGameOver() {
     return secretWord === guessWord || wrongLetters.length === LOSE_WRONG_COUNTS
 }
+
+init();
